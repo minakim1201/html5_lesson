@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그</title>
+    <style>
+        div{padding: 5px 0;} /*두개 작성하면 좌 우 표시할 수 있음*/
+        input {padding: 5px;}
+        label {font-weight: bold;}
+        span {color: red;}
+        select {padding: 5px;}
+        button {padding: 3px 10px;}
+        input[type="number"] {width:50px} /*넘버타입만 크기 지정*/
+    </style>
+</head>
+<body>
+    <h1>폼 관련 태그</h1>
+    <h2>인증 - 로그인 폼</h2>
+    <form name="loginfrm" method="post"> <!--ㅇㅀ-->
+        <div>
+            <label for="userid">아이디</label>
+            <input type="text" id="userid" name="userid" minlength="8" maxlength="16">
+        </div>
+        <div>
+            <label for="passwd">비밀번호</label>
+            <input type="password" id="passwd" name="passwd" minlength="8" maxlength="16">
+        </div>
+        <div>
+            <button type="submit">로그인하기</button>
+        </div>
+    </form>
+
+
+    <h2>회원가입 폼</h2>
+    <form name="joinfrm">
+        <div>
+            <label for="userid">이름 <span>*</span></label>
+            <input type ="text" id="name" name="name" size="5">
+        </div>
+        <div>
+            <label for="gender">성별 <span>*</span></label>
+            <input type ="radio" id="gm" name="gender" value="m"> 남성
+            <input type ="radio" id="gf" name="gender" value="f"> 여성
+        </div>
+        <!--예제 뉴스메일 버튼-->
+        <div>
+            <label for="newsmail">뉴스메일 </label>
+            <input type ="radio" id="mail-y" name="newsmail" value="mail-y"> 받습니다.
+            <input type ="radio" id="mail-n" name="newsmail" value="mail-n"> 받지 않습니다.
+        </div>
+        <div>
+            <label for="sms-mess">SMS안내(이벤트) </label>
+            <input type ="radio" id="sms-y" name="sms-mess" value="sms-y"> 받습니다.
+            <input type ="radio" id="sms-n" name="sms-mess" value="sms-n"> 받지 않습니다.
+        </div>
+        <!--생일/성별, 년도와 월 일을 다 표시해야함 dropdown 메뉴-->
+        <div>
+            <label for="byear">생년월일<span>*</span></label>
+            <select id="byear" name="byear">
+                <option>------</option>
+                <option>2015</option>
+                <option>2016</option>
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+            </select>월
+            <select id="bmonth" name="bmonth">
+                <option>----</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>일
+            <select id="bday" name="bday">
+                <option>----</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>일
+        </div>
+
+
+        <!--연락처-->   
+        <div>
+            <label for="phnum1">연락처</label><span>*</span>
+            <select id="phnum1" name="phnum1">
+                <option>----</option>
+                <option>010</option>
+                <option>011</option>
+                <option>019</option>
+                <option>02</option>
+            </select><b> &nbsp-&nbsp </b>
+            <input type ="number" id="phnum2" name="phnum2"  maxlength="4">
+
+            <label for="phnum3"> </label><b> &nbsp-&nbsp </b>
+            <input type ="number" id="phnum3" name="phnum3" maxlength="4">
+        </div>
+        <!--숫자만 입력가능한 폼 tel-->
+
+
+        <!--이메일-->  
+        <div>
+            <label for="email1">이메일</label><span>*</span>
+            <style>
+            </style>
+            <label for="email1"> </label>
+            <input type ="text" id="email1" name="email1" size="10">
+            <b> &nbsp@&nbsp </b> 
+            <select id="email2" name="email2">
+                <option>------------</option>
+                <option>naver.com</option>
+                <option>gmail.com</option>
+                <option>kakao.com</option>
+                <option>daum.com</option>
+            </select>
+            <!--summit은 페이지가 넘어감-->    
+            <button type="button">중복확인</button> 
+        </div>
+        
+        <!--우편번호-->   
+        <div>
+            <label for="addr1">기본 주소</label><span>*</span>
+            <input type ="text" id="zipcode" name="zipcode" size="4">
+            <button type="button">우편번호 검색</button>
+            <div> <input type ="text" id="addr1" name="addr1"></div>
+            <div> <input type ="text" id="addr2" name="addr2"></div>
+        </div>
+        <div>
+            <!--체크박스와 radio의 차이, 다중선택과 단일선택-->
+            <label for="interest"> 관심분야</label>
+            <input type ="checkbox" id="interest" name="interest" value="sporst">스포츠
+            <input type ="checkbox" id="iart" name="interest" value="art">예술
+            <input type ="checkbox" id="ipol" name="interest" value="political">사회/정치
+            <input type ="checkbox" id="itrp" name="interest" value="trip">문화/여행
+            <input type ="checkbox" id="ibok" name="interest" value="book">독서
+            <input type ="checkbox" id="imov" name="interest" value="movie">영화
+            <input type ="checkbox" id="igme" name="interest" value="game">게임
+        </div>
+        <div>
+            <label for="attach">첨부파일</label>
+            <input type ="file" id="attach" name="attach">
+        </div>
+        <div>
+            <button type="submit">가입하기</button>
+            <button type="reset">다시입력</button>
+            
+        </div>
+
+    </form>
+</body>
+</html>
